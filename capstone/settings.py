@@ -61,6 +61,7 @@ ROOT_URLCONF = "capstone.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
+        # #locate where path of template is stored
         "DIRS": [os.path.join(BASE_DIR, 'templates')],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -137,18 +138,20 @@ SITE_ID = 1
 
 AUTH_USER_MODEL = 'ottanime.CustomUser'
 
-
+#static files
 STATIC_URL = "static/"
+# locate where path of static files is stored
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 
 # media files containing videos and photos
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#locate where path of media is stored
+MEDIA_ROOT = [os.path.join(BASE_DIR, 'media')]
 
 
 LOGIN_URL = 'login'
-LOGIN_REDIECT_URL = "Home"
+LOGIN_REDIECT_URL = "ottanime:Home"
 # using only email method for authentication instead of username
 # using 'none' to allow logins with an unverified e-mail address for right now
 # HENCE IT is not needed now

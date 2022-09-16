@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% load static %}
 
-{% block content %}
+{% block body %}
 <header class="min-h-screen bg-black bg-opacity-75 showcase border-gray-600 border-b-8 flex justify-center items-center bg-no-repeat"  style="background-image: url('{% static 'images/background_netflix.jpg' %}');">
     <div class="z-10 h-full py-32 md:py-0 text-gray-100 text-center flex items-center flex-col">
         <h1 class="font-semibold text-4xl md:text-5xl w-10/12 md:w-3/4 text-center">
@@ -71,4 +71,4 @@
         <img src="{% static 'images/netflix_kid.png' %}" class="w-8/12" alt="">
     </div>
 </section>
-{% endblock content %}
+{% endblock %}

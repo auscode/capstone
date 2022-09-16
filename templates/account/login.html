@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% load static %}
 
-{% block content %}
+{% block body %}
     <header class="min-h-screen w-full bg-black bg-opacity-75 showcase border-gray-600 border-b-8 flex justify-center py-20 bg-no-repeat"  style="background-image: url('{% static 'images/background_netflix.jpg' %}');">
         <div class="z-10 h-full py-32 md:py-0 text-gray-100 w-6/12  flex items-center flex-col">
             <form class="bg-black bg-opacity-70 py-8 px-4 w-8/12 rounded-md" method="POST">
@@ -43,4 +43,4 @@
             </form>
         </div>
     </header>
-    {% endblock content %}
+    {% endblock %}

@@ -3,10 +3,12 @@
 
 {% block body %}
     <main class='bg-primary_black h-full w-full '>
+        {% comment %} json for collecting the movie movie_data {% endcomment %}
         {{movie|json_script:'movie_data'}}
         <video  controls class="w-full h-screen player"></video>
         
     </main>
+    
     <script>
         const videoEl = document.querySelector('video')
         const movie_data = JSON.parse(document.getElementById('movie_data').textContent);
