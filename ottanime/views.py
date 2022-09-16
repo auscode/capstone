@@ -1,26 +1,26 @@
 from django.views import View
-from . forms import *
-from . models import *
 from django.shortcuts import redirect, render
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 
+from . forms import *
+from . models import *
 
 class Home(View):
     def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated:
-            return redirect('profile-list')
+        # if request.user.is_authenticated:
+        #     return redirect('profile-list')
         return render(request, 'index.html')
 
 
-# method_decorator(login_required, name='dispatch')
+method_decorator(login_required, name='dispatch')
 
 
 class ProfileList(View):
     def get(self, request, *args, **kwargs):
-
+        #it gets the logged in user (request.user)
         profiles = request.user.profiles.all()
-
+        #passing temp to context of profile list
         context = {
             'profiles': profiles
         }
