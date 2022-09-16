@@ -1,20 +1,19 @@
-# import imp
-from django.shortcuts import redirect, render
 from django.views import View
-from django.contrib.auth.decorators import login_required
+from . forms import *
+from . models import *
+from django.shortcuts import redirect, render
 from django.utils.decorators import method_decorator
-from . forms import ProfileForm
-from . models import Profile, Movie
+from django.contrib.auth.decorators import login_required
 
 
 class Home(View):
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            return redirect('ottanime:profile-list')
+            return redirect('profile-list')
         return render(request, 'index.html')
 
 
-method_decorator(login_required, name='dispatch')
+# method_decorator(login_required, name='dispatch')
 
 
 class ProfileList(View):
@@ -45,7 +44,7 @@ class ProfileCreate(View):
             profile = Profile.objects.create(**form.cleaned_data)
             if profile:
                 request.user.profiles.add(profile)
-                return redirect('ottanime:profile-list')
+                return redirect('profile-list')
         context = {
             'form': form
         }
@@ -61,7 +60,7 @@ class MovieList(View):
             profile = Profile.objects.get(uuid=profile_id)
             movies = Movie.objects.filter(age_limit=profile.age_limit)
             if profile not in request.user.profiles.all():
-                return redirect('ottanime:profile-list')
+                return redirect('profile-list')
 
             context = {
                 'movies': movies
@@ -69,7 +68,7 @@ class MovieList(View):
 
             return render(request, 'movielist.html', context)
         except Profile.DoesNotExist:
-            return redirect('ottanime:profile-list')
+            return redirect('profile-list')
 
 
 method_decorator(login_required, name='dispatch')
@@ -86,7 +85,7 @@ class MovieDetail(View):
 
             return render(request, 'moviedetail.html', context)
         except Movie.DoesNotExist:
-            return redirect('ottanime:profile-list')
+            return redirect('profile-list')
 
 
 method_decorator(login_required, name='dispatch')
@@ -104,4 +103,4 @@ class PlayMovie(View):
 
             return render(request, 'playmovie.html', context)
         except Movie.DoesNotExist:
-            return redirect('ottanime:profile-list')
+            return redirect('profile-list')
