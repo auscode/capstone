@@ -147,7 +147,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # media files containing videos and photos
 MEDIA_URL = '/media/'
 # locate where path of media is stored
-MEDIA_ROOT = [os.path.join(BASE_DIR, 'media')]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 LOGIN_URL = 'login'

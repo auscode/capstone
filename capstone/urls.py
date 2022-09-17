@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include('ottanime.urls')),
-    path('accounts/', include('allauth.urls')),
+    path('', include('allauth.urls')),
 ]
 
 #for locating where our media files are stored

@@ -10,6 +10,7 @@ AGE_CHOICES = {
 }
 
 MOVIE_CHOICES = {
+    # for code , for front end
     ('seasonal', 'Seasonal'),
     ('single', 'Single'),
 }
@@ -47,7 +48,7 @@ class Movie(models.Model):
 
 class Video(models.Model):
     title = models.CharField(max_length=1000)
-    file = models.FileField(upload_to="movies")
+    file = models.FileField(upload_to='movies')
 
     def __str__(self):
         return self.title
