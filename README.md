@@ -47,8 +47,3 @@ In our proevius projects i did not create the profile section where i can segreg
 
 I did this because thats how you would like to create the video platform where you can achieve variuos age group without having any conflict over any of that adult and kids stuff mixing altogether.
 ....
-
-
-
-
-
