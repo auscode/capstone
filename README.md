@@ -2,6 +2,8 @@
 ## authentication
 using [all authenticcation](https://django-allauth.readthedocs.io/en/latest/installation.html) for the login and log out sysytem 
 
+### how to run the webapp
+
 
 ### layoutpage
 this page contains the layout of the website it conatins the features of the navbar and the footer of the page itself.
