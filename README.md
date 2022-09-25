@@ -3,6 +3,16 @@
 using [all authenticcation](https://django-allauth.readthedocs.io/en/latest/installation.html) for the login and log out sysytem 
 
 ### how to run the webapp
+- Create a new folder
+- Open terminal in new folder
+- pip install virtualenv
+- virtualenv venv
+- venv\Scripts\activate
+- git clone https://github.com/auscode/capstone
+- cd capstone
+- pip3 install -r requirements.txt
+- python manage.py runserver
+
 
 
 ### layoutpage
