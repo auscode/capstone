@@ -1,8 +1,11 @@
 # capstone
+
 ## authentication
-using [all authenticcation](https://django-allauth.readthedocs.io/en/latest/installation.html) for the login and log out sysytem 
+
+using [all authentication](https://django-allauth.readthedocs.io/en/latest/installation.html) for the login and log out sysytem
 
 ### how to run the webapp
+
 - Create a new folder
 - Open terminal in new folder
 - pip install virtualenv
@@ -13,9 +16,8 @@ using [all authenticcation](https://django-allauth.readthedocs.io/en/latest/inst
 - pip3 install -r requirements.txt
 - python manage.py runserver
 
-
-
 ### layoutpage
+
 this page contains the layout of the website it conatins the features of the navbar and the footer of the page itself.
 
 The navabr contains the image(logo) of the website and it also contains the sign-in buttton if you are not logged in it changes as you sign-in to logout at the exact position of the sign-in button.
@@ -23,20 +25,22 @@ The navabr contains the image(logo) of the website and it also contains the sign
 Footer contains only the required things like the rights reservation and from where it is inspired from and my name & github usernmae.
 
 ### index and create profile page
+
 User interface of the netflix clone page to get idea of what you can do and what this website is providing to you.
 for ex. you can create profiles for kids & Adults who can access diffrent videos(contents) according to the profile you have selected.
 
 ### movielist
+
 In this page i've created a card it contains the image of the movie or series you want to feature and its description contains a little info about the movie or series.
 
 Just below the card there is a video section there is a list of the movies you can watch it by clicking on the thumbnail of the movie.
 
-
 # Distinctiveness and Complexity
+
 ...
 Authentication Backend
 
-in this webapp i've used the all-authenticcation system provided django-python where you zhave to install the library and set it up in the settings to use it. 
+in this webapp i've used the all-authenticcation system provided django-python where you zhave to install the library and set it up in the settings to use it.
 
 I used it because i want to try other authentication system insted of writing their views again and again each time and suppose if i've to use googele, facebook, twitter etc. for login i've to learn and it and also learn how to make views for that which is more work by using all-auth i just have to add specify in the settings file to set it up, so i learn how to apply them in the last project.
 ....
