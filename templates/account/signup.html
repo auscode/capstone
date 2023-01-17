@@ -11,9 +11,12 @@
                     Sign Up
                 </h1>
                 <div class=" text-center my-4">
+                    {% comment %} for error checking statements {% endcomment %}
                     {% if form.errors %}
                     <p class="text-primary_red " style="color: red;">
+                        {% comment %} if email does not match the email address or it already exist {% endcomment %}
                         {{form.errors.email}}
+                        {% comment %} if passwords does not match the password  {% endcomment %}
                         {{form.errors.password1}}
                         {{form.errors.password2}}
                     {% endif %}

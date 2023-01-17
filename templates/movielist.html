@@ -44,6 +44,7 @@
     <div class="p-8 w-10/12 relative">
       <h2 class="text-gray-200 text-2xl font-medium">Popular on Ottanime</h2>
       <div class="flex justify-center items-center min-w-full movie_lis">
+        
         {% for movie in movies %}
         <a href="{% url 'ottanime:movie-detail' movie_id=movie.uuid %}">
           <div

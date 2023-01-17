@@ -10,6 +10,7 @@
                     Log In
                 </h1>
                 <div class=" text-center my-4">
+                    {% comment %} if email email address or password does not match{% endcomment %}
                     {% if form.errors %}
                     <p class="text-primary_red ">
                         {{form.non_field_errors}}
@@ -30,6 +31,7 @@
                     <input class="p-2 bg-gray-200 rounded-sm text-gray-900 outline-none block w-full" type="password" name="password" id="id_password" placeholder="Password">
                 </div>
                 <div class="flex justify-center items-center">
+                    {% comment %} submit-button for the form {% endcomment %}
                     <button class="py-2 px-4 bg-primary_red text-gray-100 font-medium text-lg rounded-md" type="submit">
                         Log In
                     </button>

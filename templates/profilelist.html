@@ -8,16 +8,21 @@
         </h2>
 
         <div class="flex flex-wrap justify-center items-center w-10/12  md:w-6/12">
+            {% comment %} loop for adding multiple LOC of profiles  {% endcomment %}
             {% for profile in profiles %}
+
             <a href="{% url 'ottanime:movie-list' profile_id=profile.uuid %}">
                 <div class="w-32 h-32 m-4  bg-blue-500 rounded-md cursor-pointer justify-center items-center flex-col flex">
-                    <p class="text-6xl" style="font-weight: 900;">{{profile.name|slice:":1"}}</p>
+                    <p class="text-6xl" style="font-weight: 900;">
+                        {% comment %} slicing to 1letter from user name initials only {% endcomment %}
+                        {{profile.name|slice:":1"}}</p>
                     <p>{{profile.name}}</p>
                 </div>
             </a>
             {% endfor %}
             
         </div>
+        {% comment %} creating another profile  {% endcomment %}
         <div class="flex justify-center items-center">
             <a href="{% url 'ottanime:profile-create' %}" class="px-4 py-2 rounded-md outline-none text-gray-100" style="background-color: #0F3460;">
                 Add A New Profile
