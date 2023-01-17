@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    #adding app to the project list
     "ottanime",
-    # all auththentication apps needed  for all authenticationBackend
+    # all-auth apps needed  for all authenticationBackend configurations
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -61,7 +62,8 @@ ROOT_URLCONF = "capstone.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        # #locate where path of template is stored
+        #joining base dir with template files
+        # locate where path of template is stored
         "DIRS": [os.path.join(BASE_DIR, 'templates')],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -124,7 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 
-# telling the setting to what authentication model is.
+# telling the setting to what authentication model is All-Auth pkg.
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
@@ -133,31 +135,32 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-# site id from all auth documentation
+# site id from all-auth documentation
 SITE_ID = 1
 
+# for backwards compatibility with user to app auth
 AUTH_USER_MODEL = 'ottanime.CustomUser'
 
 # static files
 STATIC_URL = "static/"
-# locate where path of static files is stored
+# locate where path of static files is stored and join with base dir
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 
 # media files containing videos and photos
 MEDIA_URL = '/media/'
-# locate where path of media is stored
+# locate where path of media is stored and join with base dir
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 LOGIN_URL = 'login'
 LOGIN_REDIECT_URL = 'ottanime:Home'
 # using only email method for authentication instead of username
-# using 'none' to allow logins with an unverified e-mail address for right now
-# HENCE IT is not needed now
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
+# using 'none' to allow logins with an unverified e-mail address for right now
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+# HENCE IT is not needed now
 ACCOUNT_USERNAME_REQUIRED = False
 
 

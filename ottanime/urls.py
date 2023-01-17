@@ -1,11 +1,10 @@
 from django.urls import path
 from . views import *
 
-# here are my views
-
+# using as a namespace
 app_name = 'ottanime'
 
-
+#here are my views which show at the url secction
 urlpatterns = [
     path("", Home.as_view(), name="Home"),
     path('accounts/profile/', ProfileList.as_view(), name="profile-list"),

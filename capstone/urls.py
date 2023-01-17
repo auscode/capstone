@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include('ottanime.urls')),
+    # all-auth url needed  for all authenticationBackend configurations
     path('', include('allauth.urls')),
 ]
 
