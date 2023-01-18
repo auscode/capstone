@@ -15,7 +15,6 @@
         <div class="w-6/12">
             <img src="{% static 'images/netflix.png' %}" alt="logo" class="w-5/12 md:w-2/12">
         </div>
-
         <div>
             {% if request.user.is_authenticated %}
             <a href="{% url 'account_logout' %}" class='bg-primary_red py-1 px-3 text-white md:text-lg rounded-md'>

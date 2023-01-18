@@ -5,8 +5,7 @@
 <main class="bg-primary_black min-h-screen w-full">
   <section
     class="h-screen relative bg-no-repeat pb-8 pl-6 flex justify-end items-end bg-cover"
-    style="background-image: url('{% static 'images/dbz-dark.jpg' %}')"
-  >
+    style="background-image: url('{% static 'images/dbz-dark.jpg' %}')">
     <div>
       <h2 class="text-6xl font-semibold text-white my-4">Dragon Ball Super</h2>
       <p class="w-11/12 md:w-5/12 font-medium text-white my-4">
@@ -17,24 +16,14 @@
         and friends during the ten-year timeskip after the defeat of Majin
         Buu.It began serialization in Shueisha's monthly shōnen manga magazine V
         Jump in June 2015. The manga is simulpublished in English by Viz Media
-        and by Shueisha on their Manga Plus platform.
-      </p>
+        and by Shueisha on their Manga Plus platform.</p>
       <div class="flex my-4">
-        <button
-          class="flex items-center py-2 px-4 rounded-md"
-          style="background-color: #f44336"
-        >
+        <button class="flex items-center py-2 px-4 rounded-md"style="background-color: #f44336">
           <ion-icon name="play" class="text-2xl"></ion-icon>
           <span class="ml-3 font-medium"> Play </span>
         </button>
-
-        <button
-          class="ml-4 text-white flex items-center bg-gray-500 bg-opacity-80 py-2 px-4 rounded-md"
-        >
-          <ion-icon
-            name="information-circle-outline"
-            class="text-2xl"
-          ></ion-icon>
+        <button class="ml-4 text-white flex items-center bg-gray-500 bg-opacity-80 py-2 px-4 rounded-md">
+          <ion-icon name="information-circle-outline" class="text-2xl"></ion-icon>
           <span class="ml-3 font-medium"> More Info </span>
         </button>
       </div>
@@ -44,12 +33,9 @@
     <div class="p-8 w-10/12 relative">
       <h2 class="text-gray-200 text-2xl font-medium">Popular on Ottanime</h2>
       <div class="flex justify-center items-center min-w-full movie_lis">
-        
         {% for movie in movies %}
         <a href="{% url 'ottanime:movie-detail' movie_id=movie.uuid %}">
-          <div
-            class="h-40 m-4 bg-blue-500 flex-shrink-0 rounded-md cursor-pointer w-40"
-          >
+          <div class="h-40 m-4 bg-blue-500 flex-shrink-0 rounded-md cursor-pointer w-40">
             <img src="{{movie.image.url}}" class="w-full h-full" alt="" />
           </div>
         </a>
