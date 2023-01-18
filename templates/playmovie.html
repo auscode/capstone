@@ -1,21 +1,30 @@
-{% extends 'layout.html' %}
-{% load static %}
+{% extends 'layout.html' %} {% load static %} {% block body %}
+<main class="bg-primary_black h-full w-full">
+  {% comment %} The json_script filter is used to convert the movie variable
+  into a JSON object and create a script element with an id of 'movie_data'
+  {%endcomment %} {{movie|json_script:'movie_data'}}
+  <video controls class="w-full h-screen player"></video>
+  {% comment %} This script element contains the JSON representation of the
+  movie variable and can be accessed by JavaScript to retrieve data about the
+  movie. {% endcomment %}
+</main>
+{% comment %} javascript {% endcomment %}
+<script>
+  {% comment %} selecting video query  {% endcomment %}
+  const videoEl = document.querySelector('video')
+  {% comment %} This method convert the json string into javascript object and the object is assigned to variable movie_data {% endcomment %}
+  const movie_data = JSON.parse(document.getElementById('movie_data').textContent);
+  {% comment %} location.href property is used to get the entire URL of the current web page, which is then 
+  passed as an argument to the URL constructor. {% endcomment %}
+  const url = new URL(location.href)
+  {% comment %} This retrieves the value of the query parameter "epi"OR UUID from the current URL, parse it as integer and assigns it to 
+  the variable named video_param. {% endcomment %}
+  const video_param = parseInt(url.searchParams.get('epi'))?parseInt(url.searchParams.get('epi')):0
+  {% comment %} This line of code sets the src attribute of the videoEl element to a specific URL constructed from a string and movie_data[video_param].file and 
+  assigns it to the src attribute of the video element, allowing the video to be played by loading it from the specified URL. {% endcomment %}
+  videoEl.setAttribute('src', `http://localhost:8000/media/${movie_data[video_param].file}`)
+</script>
+{% comment %} In this way, the code can be used to play a video based on the query parameter passed in the URL and data of the movie. {% endcomment %}
 
-{% block body %}
-    <main class='bg-primary_black h-full w-full '>
-        {% comment %} json for collecting the movie movie_data {% endcomment %}
-        {{movie|json_script:'movie_data'}}
-        <video  controls class="w-full h-screen player"></video>
-        
-    </main>
-    {% comment %} javascript {% endcomment %}
-    <script>
-        {% comment %} selecting video query  {% endcomment %}
-        const videoEl = document.querySelector('video')
-        const movie_data = JSON.parse(document.getElementById('movie_data').textContent);
-        const url = new URL(location.href)
-        {% comment %} epi used for episodes {% endcomment %}
-        const video_param = parseInt(url.searchParams.get('epi'))?parseInt(url.searchParams.get('epi')):0
-        videoEl.setAttribute('src', `http://localhost:8000/media/${movie_data[video_param].file}`)
-    </script>
+
 {% endblock %}

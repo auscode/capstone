@@ -25,7 +25,10 @@ urlpatterns = [
     path('', include('allauth.urls')),
 ]
 
-#for locating where our media files are stored
+# These are used for storing user-uploaded files like images, videos, etc
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+# this code is adding URL patterns for serving static and media files when the settings.DEBUG variable is True during development. 
+# When the settings.DEBUG variable is False, these URL patterns will not be added, 
+# this is helpful during deployment when the files are served by web server directly rather than by the web application.
