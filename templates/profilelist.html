@@ -11,7 +11,7 @@
         <div class="flex flex-wrap justify-center items-center w-10/12  md:w-6/12">
             {% comment %} loop for adding multiple LOC of profiles  {% endcomment %}
             {% for profile in profiles %}
-
+            {% if forloop.counter <= 5 %}
             <a href="{% url 'ottanime:movie-list' profile_id=profile.uuid %}">
                 <div class="w-32 h-32 m-4  bg-blue-500 rounded-md cursor-pointer justify-center items-center flex-col flex">
                     <p class="text-6xl" style="font-weight: 900;">
@@ -20,6 +20,10 @@
                     <p>{{profile.name}}</p>
                 </div>
             </a>
+            {% endif %}
+              {% if forloop.counter == 5 %}
+                {% break %}
+              {% endif %}
             {% endfor %}
             
         </div>
