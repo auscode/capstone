@@ -1,6 +1,8 @@
 from django.urls import path
 from . views import *
 
+
+
 # using as a namespace
 app_name = 'ottanime'
 
@@ -13,6 +15,7 @@ urlpatterns = [
     path('watch/detail/<str:movie_id>/',
          MovieDetail.as_view(), name="movie-detail"),
     path('watch/play/<str:movie_id>/', PlayMovie.as_view(), name="play-movie"),
+    path('logout/', logout_view, name='logout'),
 ]
 
 

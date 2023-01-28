@@ -1,7 +1,9 @@
 from django.views import View
 from django.shortcuts import redirect, render
+from django.contrib.auth import logout
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+
 
 # importing models and form .py files 
 from . forms import *
@@ -112,3 +114,8 @@ class PlayMovie(View):
             return render(request, 'playmovie.html', context)
         except Movie.DoesNotExist:
             return redirect('ottanime:profile-list')
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')
