@@ -26,25 +26,35 @@ SECRET_KEY = "django-insecure-g3$z(0mh^)y=(m%(h4_g+72o6tddj#+ax9^8792dbf)n+eogjy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# static files
+STATIC_URL = "static/"
+#uncomment the below command for deployment purposes
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# locate where path of static files is stored and join with base dir
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
+
+# ALLOWED_HOSTS = ["auscode.pythonanywhere.com"]
+ALLOWED_HOSTS = []
+#you can also use 
+#ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.sites',
+    "django.contrib.sites",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    #adding app to the project list
+    # adding app to the project list
     "ottanime",
     # all-auth apps needed  for all authenticationBackend configurations
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
 ]
 
 MIDDLEWARE = [
@@ -62,9 +72,9 @@ ROOT_URLCONF = "capstone.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        #joining base dir with template files
+        # joining base dir with template files
         # locate where path of template is stored
-        "DIRS": [os.path.join(BASE_DIR, 'templates')],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -129,37 +139,31 @@ USE_TZ = True
 # telling the setting to what authentication model is All-Auth pkg.
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
-    'django.contrib.auth.backends.ModelBackend',
-
+    "django.contrib.auth.backends.ModelBackend",
     # `allauth` specific authentication methods, such as login by e-mail
-    'allauth.account.auth_backends.AuthenticationBackend',
+    "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
 # site id from all-auth documentation
 SITE_ID = 1
 
 # for backwards compatibility with user to app auth
-AUTH_USER_MODEL = 'ottanime.CustomUser'
-
-# static files
-STATIC_URL = "static/"
-# locate where path of static files is stored and join with base dir
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+AUTH_USER_MODEL = "ottanime.CustomUser"
 
 
 # media files containing videos and photos
-MEDIA_URL = '/media/'
+MEDIA_URL = "/media/"
 # locate where path of media is stored and join with base dir
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
-LOGIN_URL = 'login'
-LOGIN_REDIECT_URL = 'ottanime:Home'
+LOGIN_URL = "login"
+LOGIN_REDIECT_URL = "ottanime:Home"
 # using only email method for authentication instead of username
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
 # using 'none' to allow logins with an unverified e-mail address for right now
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = "none"
 # HENCE IT is not needed now
 ACCOUNT_USERNAME_REQUIRED = False
 
