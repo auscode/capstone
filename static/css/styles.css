@@ -202,12 +202,15 @@ select { /* 1 */
 /**
 Correct the inability to style clickable types in iOS and Safari.
 */
-
 button,
 [type='button'] {
   -webkit-appearance: button;
+  /* Safari and Chrome */
+  -moz-appearance: button;
+  /* Firefox */
+  appearance: button;
+  /* Standard */
 }
-
 /**
 Remove the inner border and padding in Firefox.
 */
@@ -1190,4 +1193,13 @@ video {
 }
 
 @media (min-width: 1536px){
+}
+
+
+.black-blur {
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
