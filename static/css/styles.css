@@ -26,7 +26,7 @@ Use a more readable tab size (opinionated).
 html {
   -moz-tab-size: 4;
   -o-tab-size: 4;
-     tab-size: 4;
+  tab-size: 4;
 }
 
 /**
@@ -1197,7 +1197,13 @@ video {
 
 
 .black-blur {
-  background-color: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to right,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.65) 35%,
+        rgba(0, 0, 0, 0.5) 65%,
+        rgba(0, 0, 0, 0) 100%);
+  /* background: -webkit-radial-gradient(circle at right, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.65) 70%, rgba(0, 0, 0, 1) 100%);
+  background: radial-gradient(circle at right, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.65) 70%, rgba(0, 0, 0, 1) 100%); */
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   -webkit-border-radius: 10px;
