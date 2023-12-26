@@ -1,12 +1,12 @@
 # capstone
 
-- ![catalogue.png](demoimages/catalogue.png)
-- ![createprofile.png](demoimages/createprofile.png)
 - ![home.png](demoimages/home.png)
 - ![home1.png](demoimages/home1.png)
 - ![home2.png](demoimages/home2.png)
 - ![home3.png](demoimages/home3.png)
 - ![login.png](demoimages/login.png)
+- ![catalogue.png](demoimages/catalogue.png)
+- ![createprofile.png](demoimages/createprofile.png)
 - ![moviedemo.png](demoimages/moviedemo.png)
 - ![moviedesc.png](demoimages/moviedesc.png)
 - ![profile.png](demoimages/profile.png)
