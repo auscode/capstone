@@ -35,7 +35,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 
 # ALLOWED_HOSTS = ["auscode.pythonanywhere.com"]
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 #you can also use 
 #ALLOWED_HOSTS = ["*"]
 
